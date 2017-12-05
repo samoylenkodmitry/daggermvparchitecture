@@ -7,7 +7,9 @@
 
 3. `@Provide`
 
-4. Scope - `@Singleton`, and other hand-made.
+4. `@Inject`
+
+5. Scope - `@Singleton`, and other hand-made.
 
 ### @Module & @Provide
 
@@ -38,3 +40,33 @@ interface MyComponent {
 
 ```
 
+### @Inject
+
+Main advantage - constructor injection
+
+```java
+
+@Singleton
+class MySingleton {
+
+    @Inject
+    MySingleton() {
+
+    }
+
+}
+
+```
+
+Module not required, all dependencies injected automatically:
+
+```java
+
+@Singleton
+class MySingleton2 {
+
+    @Inject
+    MySingleton2(MySingleton other) {
+    }
+}
+```
